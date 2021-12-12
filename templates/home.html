@@ -12,7 +12,7 @@
             </div>
         </form>
 
-        {% if input_movie_data == true %}
+        {% if input_movie_data is defined %}
         <div class="input_movie_data">
             <p>{{ input_movie_data[0] }} ({{ input_movie_data[1] }})</p>
             <p>Genre: {{ input_movie_data[2] }}</p>
