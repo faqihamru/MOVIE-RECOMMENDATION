@@ -30,12 +30,12 @@ def get_recommendation(movie_name):
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('template/home.html')
 
 @app.route('/search/results', methods=['GET', 'POST'])
 def search():
     input_movie = request.form["input"]
-    return render_template('home.html', get_recommendation(input_movie))
+    return render_template('template/home.html', get_recommendation(input_movie))
 
 if __name__ == '__main__':
     app.run(debug=True)
