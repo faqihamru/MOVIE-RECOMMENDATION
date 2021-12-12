@@ -12,7 +12,7 @@ def get_recommendation(movie_name):
     movie_index = movie_data.index[movie_data['Title'] == movie_name].values[0]
 
     # get list of movies recommendation
-    movies = movie_rec_data[movie_index]
+    movies = movie_rec_data.iloc[movie_index]
     movie_rec = []
     for movie in movies:
         temp = []
@@ -25,7 +25,7 @@ def get_recommendation(movie_name):
         temp.append(year)
         temp.append(genre)
         temp.append(rating)
-    movie_rec.append(temp)
+        movie_rec.append(temp)
     return movie_rec
 
 @app.route("/")
