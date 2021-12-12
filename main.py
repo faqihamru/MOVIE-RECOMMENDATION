@@ -9,7 +9,7 @@ movie_rec_data = pd.read_csv('machine_learning_model/movie_recommendation_datase
 
 def get_recommendation(movie_name):
     # find movie index
-    movie_index = df.index[df['Title'] == movie_name].values[0]
+    movie_index = movie_data.index[df['Title'] == movie_name].values[0]
 
     # get list of movies recommendation
     movies = movie_rec_data[movie_index]
