@@ -32,7 +32,7 @@ def get_recommendation(movie_name):
 def home():
     return render_template('home.html')
 
-@app.route('/search/results', methods=['GET', 'POST'])
+@app.route('/search', methods=['GET', 'POST'])
 def search():
     input_movie = request.form["input"]
     return render_template('home.html', get_recommendation(input_movie))
