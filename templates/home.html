@@ -18,6 +18,8 @@
             <p>Genre: {{ input_movie_data[2] }}</p>
             <p>Movie stars: {{ input_movie_data[3] }}</p>
         </div>
+        {% endif %}
+
         <h2>Recommended Movies:</h2>
 
         <div class="result">
@@ -42,7 +44,6 @@
                 {% endfor %}
             </table>
         </div>
-        {% endif %}
     </div>
 </body>
 </html>
