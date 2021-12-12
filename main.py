@@ -35,7 +35,22 @@ def home():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     input_movie = request.form["input"]
-    return render_template('home.html', movie_rec = get_recommendation(input_movie))
+
+    # get input movie data
+    input_movie_data = []
+    input_movie_id = movie_data.index[movie_data['Title'] == movie_name].values[0]
+    title = movie_data['Title'][input_movie_id]
+    year = movie_data['Year'][input_movie_id]
+    genre = movie_data['Genre'][input_movie_id]
+    rating = movie_data['Rating'][input_movie_id]
+
+    input_movie_data.append(title)
+    input_movie_data.append(year)
+    input_movie_data.append(genre)
+    input_movie_data.append(rating)
+
+    # get movie recommendation
+    return render_template('home.html', movie_rec = get_recommendation(input_movie), input_movie_data = input_movie_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
