@@ -38,7 +38,7 @@ def search():
 
     # get input movie data
     input_movie_data = []
-    input_movie_id = movie_data.index[movie_data['Title'] == movie_name].values[0]
+    input_movie_id = movie_data.index[movie_data['Title'] == input_movie].values[0]
     title = movie_data['Title'][input_movie_id]
     year = movie_data['Year'][input_movie_id]
     genre = movie_data['Genre'][input_movie_id]
